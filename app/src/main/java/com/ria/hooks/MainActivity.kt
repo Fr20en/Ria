@@ -309,10 +309,10 @@ private fun HomeScreen() {
 
         CardContainer {
             Column(Modifier.padding(20.dp)) {
-                Text("Hook 模板", fontSize = 15.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
+                Text("已内置 Hook", fontSize = 15.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
                 Spacer(Modifier.height(6.dp))
                 Text(
-                    "空模板骨架，hook 逻辑待接入。入口：com.ria.hooks.MainHook（libxposed API 102）。",
+                    "漫客栈 com.xmtj.mkz — VIP 解锁 + 全广告屏蔽（模板实测 3.9.0，其余版本按类名自动匹配）",
                     fontSize = 13.sp,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
