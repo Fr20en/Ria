@@ -1,9 +1,8 @@
 package com.ria.hooks;
 
-import android.util.Log;
+import static android.util.Log.INFO;
 
 import io.github.libxposed.api.XposedModule;
-import io.github.libxposed.api.XposedModuleContext;
 import io.github.libxposed.api.XposedModuleInterface.PackageLoadedParam;
 
 /**
@@ -12,14 +11,9 @@ import io.github.libxposed.api.XposedModuleInterface.PackageLoadedParam;
  */
 public class MainHook extends XposedModule {
 
-    public MainHook(XposedModuleContext context) {
-        super(context);
-        Log.i("Ria", "Ria module loaded");
-    }
-
     @Override
     public void onPackageLoaded(PackageLoadedParam param) {
         super.onPackageLoaded(param);
-        Log.i("Ria", "loaded in " + param.getPackageName());
+        log(INFO, "Ria", "loaded in " + param.getPackageName());
     }
 }
