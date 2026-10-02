@@ -11,16 +11,16 @@ android {
         applicationId = "com.ria.hooks"
         minSdk = 26
         targetSdk = 37
-        versionCode = 2
-        versionName = "1.1.0"
+        versionCode = 3
+        versionName = "1.2.0"
     }
 
     signingConfigs {
         create("release") {
-            storeFile = rootProject.file("ria-release.keystore")
-            storePassword = "ria2026"
+            storeFile = rootProject.file("ria.jks")
+            storePassword = "lfnbb123lgm"
             keyAlias = "ria"
-            keyPassword = "ria2026"
+            keyPassword = "lfnbb123lgm"
         }
     }
 
@@ -64,5 +64,5 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.5.0-alpha24")
 
     debugImplementation("androidx.compose.ui:ui-tooling")
-    compileOnly("de.robv.android.xposed:api:82")
+    compileOnly("io.github.libxposed:api:102.0.0")
 }

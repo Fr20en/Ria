@@ -39,7 +39,7 @@ git push origin v1.0.0
 
 ## 签名
 
-仓库内置固定签名 `ria-release.keystore`（PKCS12，密码在 `app/build.gradle.kts` 中），保证每次 CI 构建产物签名一致，可直接覆盖安装更新。个人模块仓库专用，请勿用于分发敏感应用。
+仓库内置固定签名 `ria.jks`（alias：`ria`，密码在 `app/build.gradle.kts` 中），保证每次 CI 构建产物签名一致，可直接覆盖安装更新。个人模块仓库专用，请勿用于分发敏感应用。
 
 ## License
 

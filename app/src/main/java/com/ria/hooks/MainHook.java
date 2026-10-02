@@ -1,17 +1,25 @@
 package com.ria.hooks;
 
-import de.robv.android.xposed.IXposedHookLoadPackage;
-import de.robv.android.xposed.XposedBridge;
-import de.robv.android.xposed.callbacks.XC_LoadPackage;
+import android.util.Log;
+
+import io.github.libxposed.api.XposedModule;
+import io.github.libxposed.api.XposedModuleContext;
+import io.github.libxposed.api.XposedModuleInterface.PackageLoadedParam;
 
 /**
- * Ria 空模板入口。
- * hook 模板接入点：在 handleLoadPackage 中按 lpparam.packageName 过滤目标应用后执行 hook。
+ * Ria hook 模块入口（libxposed API 102）。
+ * hook 模板接入点：在 onPackageLoaded 中按 param.getPackageName() 过滤目标应用后执行 hook。
  */
-public class MainHook implements IXposedHookLoadPackage {
+public class MainHook extends XposedModule {
+
+    public MainHook(XposedModuleContext context) {
+        super(context);
+        Log.i("Ria", "Ria module loaded");
+    }
 
     @Override
-    public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) {
-        XposedBridge.log("Ria: loaded in " + lpparam.packageName);
+    public void onPackageLoaded(PackageLoadedParam param) {
+        super.onPackageLoaded(param);
+        Log.i("Ria", "loaded in " + param.getPackageName());
     }
 }
