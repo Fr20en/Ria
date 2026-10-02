@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.function.Consumer;
 
+import com.ria.hooks.app.MkzHooks;
+
 import io.github.libxposed.api.XposedModule;
 import io.github.libxposed.api.XposedModuleInterface.PackageLoadedParam;
 
@@ -33,7 +35,7 @@ public class MainHook extends XposedModule {
     /** 按包名分发给各应用的 hook 实现。 */
     private void route(PackageLoadedParam param, String pkg) {
         if ("com.xmtj.mkz".equals(pkg)) {
-            withClassLoader(param, cl -> app.MkzHooks.hook(this, cl));
+            withClassLoader(param, cl -> MkzHooks.hook(this, cl));
         }
     }
 
